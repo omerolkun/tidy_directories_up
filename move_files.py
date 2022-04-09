@@ -15,6 +15,14 @@ if file_number_in_directory > 10:
     new_dir_name = date.strftime("%x").replace("/",".")
     new_dir_path = f"{mypath}/{new_dir_name}"
     
+    f = open(f'{mypath}/where_are_the_files.txt', 'a')
+
+    for item in onlyfiles:
+        if item != "where_are_the_files.txt":
+            f.write(item + "    " + new_dir_name + "\n")
+
+  
+    f.close()
 
     try:
         os.makedirs((new_dir_path), exist_ok = True)
@@ -23,6 +31,7 @@ if file_number_in_directory > 10:
         print("Directory  can not be created")
 
     for i in range(file_number_in_directory):
-        os.rename(f"{mypath}/{onlyfiles[i]}", f"{new_dir_path}/{onlyfiles[i]}")
+        if onlyfiles[i] != "where_are_the_files.txt":
+            os.rename(f"{mypath}/{onlyfiles[i]}", f"{new_dir_path}/{onlyfiles[i]}")
 
     
