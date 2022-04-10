@@ -7,4 +7,4 @@ where_are_the_files.txt holds the locations of the files.
 
 User should assign the "mypath" and "file_number_in_directory" variables.
 
-The script can run as a start app application of the operating system for automation.
+The script can run as a startup application of the operating system for automation.
